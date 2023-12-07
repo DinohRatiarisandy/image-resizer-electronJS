@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self'"/>
+    <title>Image Resizer</title>
+    <link rel="stylesheet" href="./style.css"/>
+</head>
+<body>
+    <div id="container">
+        <div id="input-space">
+            <div id="add-img"></div>
+            <input type="file" id="input-img" accept="image/*" style="display: none;"/>
+            <h4>SELECT AN IMAGE TO RESIZE</h4>
+        </div>
+        
+        <div id="resize-informations">
+            <div id="resize-input">
+                <form>
+                    <!-- Width -->
+                    <section>
+                        <label for="width">Width</label>
+                        <input type="number" id="width" placeholder="Width in pixel (px)" min="0"/>
+                    </section>
+                    <!-- height -->
+                    <section>
+                        <label for="height">Height</label>
+                        <input type="number" id="height" placeholder="Height in pixel (px)" min="0"/>
+                    </section>
+    
+                    <button type="submit">Resize</button>
+                </form>
+            </div>
+    
+            <!-- File infos -->
+            <footer>
+                <section>
+                    <label for="file-name">File:</label>
+                    <span id="file-name"></span>
+                </section>
+                
+                <section >
+                    <label for="output">Output:</label>
+                    <span id="output-path"></span>
+                </section>
+            </footer>
+        </div>
+    </div>
+    <script src="./renderer.js"></script>
+</body>
+</html>
