@@ -5,6 +5,7 @@ const path = require("path");
 const os = require("os");
 const fs = require("fs");
 
+process.env.NODE_DEV = "production";
 const isDev = process.env.NODE_DEV !== "production";
 const isMac = process.platform == "darwin";
 
@@ -14,6 +15,7 @@ let mainWindow;
 function createMainWindow() {
     mainWindow = new BrowserWindow({
         title: "Image resizer",
+        icon: './assets/app-icon.ico',
         width: isDev ? 1000 : 500,
         height: 600,
         webPreferences: {
